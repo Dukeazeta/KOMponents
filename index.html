@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KOMponents - Beautiful Flutter Widgets Library">
+    <meta name="keywords" content="Flutter, Widgets, Components, UI, Design">
+    <title>KOMponents - Flutter Widgets Library</title>
+    <!-- Chillax Font -->
+    <link href="https://api.fontshare.com/v2/css?f[]=chillax@1,600,500,300,700,400&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-box-seam me-2"></i>KOMponents
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#components">Components</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#docs">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://github.com" target="_blank" class="nav-link">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-1 fw-bold mb-4">KOMponents</h1>
+            <p class="lead hero-subtitle mb-5">Beautiful, reusable Flutter widgets to elevate your app's user experience</p>
+            <div class="hero-buttons">
+                <a href="#components" class="btn btn-light btn-lg me-3">
+                    <i class="bi bi-grid-3x3-gap me-2"></i>Browse Components
+                </a>
+                <a href="#docs" class="btn btn-outline-light btn-lg">
+                    <i class="bi bi-book me-2"></i>Documentation
+                </a>
+            </div>
+            <div class="hero-stats mt-5">
+                <div class="row justify-content-center text-center g-4">
+                    <div class="col-md-3">
+                        <div class="stat-item">
+                            <h3 class="fw-bold">20+</h3>
+                            <p>Components</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-item">
+                            <h3 class="fw-bold">100%</h3>
+                            <p>Customizable</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-item">
+                            <h3 class="fw-bold">MIT</h3>
+                            <p>Licensed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose KOMponents?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="bi bi-lightning-charge display-4 mb-3"></i>
+                        <h3>Fast Integration</h3>
+                        <p>Drop-in components that work seamlessly with your existing Flutter projects</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="bi bi-palette display-4 mb-3"></i>
+                        <h3>Customizable</h3>
+                        <p>Easily customize colors, sizes, and animations to match your brand</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="bi bi-phone display-4 mb-3"></i>
+                        <h3>Responsive</h3>
+                        <p>Works perfectly across all screen sizes and orientations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Grid -->
+    <section id="components" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-2">Featured Components</h2>
+            <p class="text-center text-muted mb-5">Discover our collection of beautiful Flutter widgets</p>
+            <div class="row" id="components-grid">
+                <!-- Components will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Preview -->
+    <section id="docs" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="mb-4">Well-Documented Components</h2>
+                    <p class="mb-4">Each component comes with detailed documentation, examples, and implementation guides to help you get started quickly.</p>
+                    <ul class="feature-list">
+                        <li><i class="bi bi-check2-circle me-2"></i>Clear implementation examples</li>
+                        <li><i class="bi bi-check2-circle me-2"></i>Detailed API documentation</li>
+                        <li><i class="bi bi-check2-circle me-2"></i>Best practices and tips</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary mt-4">
+                        <i class="bi bi-book me-2"></i>Read Documentation
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="code-preview p-4 mt-4 mt-md-0">
+                        <pre><code class="language-dart">
+// Example usage of KOMponents
+import 'package:komponents/komponents.dart';
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return KButton(
+      text: 'Click Me',
+      style: KButtonStyle.elevated,
+      onPressed: () => print('Button pressed!'),
+    );
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section text-center py-5">
+        <div class="container">
+            <h2 class="mb-4">Ready to Build Something Amazing?</h2>
+            <p class="mb-4">Start using KOMponents in your Flutter project today</p>
+            <a href="#" class="btn btn-primary btn-lg">
+                <i class="bi bi-download me-2"></i>Get Started
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-3">KOMponents</h5>
+                    <p class="text-muted">Beautiful Flutter widgets for modern applications</p>
+                    <div class="social-links">
+                        <a href="#" class="me-3"><i class="bi bi-github"></i></a>
+                        <a href="#" class="me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="mb-3">Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#components">Components</a></li>
+                        <li><a href="#docs">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="mb-3">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Getting Started</a></li>
+                        <li><a href="#">Examples</a></li>
+                        <li><a href="#">API Reference</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Stay Updated</h5>
+                    <p class="text-muted">Subscribe to our newsletter for updates</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter your email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 KOMponents. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

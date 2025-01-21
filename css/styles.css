@@ -1,0 +1,321 @@
+/* Global Styles */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #7c3aed;
+    --dark-color: #0f172a;
+    --light-color: #f8fafc;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Chillax', sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    padding-top: 76px; /* Account for fixed navbar */
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Chillax', sans-serif;
+    font-weight: 600;
+}
+
+/* Navbar */
+.navbar {
+    padding: 1rem 0;
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+    color: var(--primary-color) !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: var(--transition);
+    color: var(--dark-color) !important;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 8rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff20" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+    background-size: cover;
+    opacity: 0.1;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-stats {
+    position: relative;
+    z-index: 1;
+}
+
+.stat-item {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(5px);
+}
+
+.stat-item h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Feature Cards */
+.feature-card {
+    padding: 2rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+    color: var(--primary-color);
+}
+
+/* Component Cards */
+.component-card {
+    background: white;
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.component-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.component-preview {
+    background: var(--light-color);
+    padding: 2rem;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.component-info {
+    padding: 1.5rem;
+}
+
+.component-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.component-info p {
+    color: #64748b;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Documentation Section */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.feature-list i {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+.code-preview {
+    background: var(--dark-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.code-preview pre {
+    margin: 0;
+    padding: 1rem;
+    background: transparent;
+}
+
+.code-preview code {
+    color: #e2e8f0;
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 0.9rem;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-color);
+    color: white;
+    padding: 4rem 0 2rem;
+}
+
+footer h5 {
+    color: white;
+    font-weight: 600;
+}
+
+footer a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+footer a:hover {
+    color: white;
+}
+
+.social-links a {
+    font-size: 1.25rem;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-lg {
+    padding: 1rem 2.5rem;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Utilities */
+.fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding-top: 66px;
+    }
+
+    .hero-section {
+        padding: 6rem 0 4rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .feature-card {
+        margin-bottom: 1rem;
+    }
+
+    .code-preview {
+        margin-top: 2rem;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .navbar {
+        background: rgba(15, 23, 42, 0.9) !important;
+    }
+
+    .nav-link {
+        color: #e2e8f0 !important;
+    }
+
+    .feature-card, .component-card {
+        background: var(--dark-color);
+        color: #e2e8f0;
+    }
+
+    .component-info p {
+        color: #94a3b8;
+    }
+}
