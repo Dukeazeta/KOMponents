@@ -6,13 +6,19 @@
     --light-color: #f8fafc;
     --border-radius: 12px;
     --transition: all 0.3s ease;
+    --navbar-height: 76px;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--navbar-height);
 }
 
 body {
     font-family: 'Chillax', sans-serif;
     background-color: var(--light-color);
     color: var(--dark-color);
-    padding-top: 76px; /* Account for fixed navbar */
+    padding-top: var(--navbar-height);
 }
 
 /* Typography */
@@ -438,4 +444,15 @@ footer a:hover {
     .component-info p {
         color: #94a3b8;
     }
+}
+
+/* Sections */
+section {
+    scroll-margin-top: var(--navbar-height);
+    position: relative;
+    overflow: hidden;
+}
+
+#home {
+    scroll-margin-top: 0;
 }

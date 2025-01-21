@@ -23,6 +23,35 @@ const components = [
     }
 ];
 
+// Function to handle smooth scrolling
+function smoothScroll(target, duration = 800) {
+    const targetElement = document.querySelector(target);
+    if (!targetElement) return;
+
+    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition - 60; // Account for fixed header
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    // Easing function
+    function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+
 // Function to load components with animation
 function loadComponents() {
     const grid = document.getElementById('components-grid');
@@ -69,15 +98,22 @@ function createComponentCard(component) {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Load components
     loadComponents();
     
-    // Smooth scrolling for navigation links
+    // Handle smooth scrolling for all internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = this.getAttribute('href');
+            smoothScroll(target);
+            
+            // Close mobile menu if open
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+                navbarToggler.click();
+            }
         });
     });
     
