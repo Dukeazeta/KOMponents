@@ -101,6 +101,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load components
     loadComponents();
     
+    // Animate number counters
+    const counterElements = document.querySelectorAll('.counter');
+    counterElements.forEach(counter => {
+        const target = parseInt(counter.textContent);
+        let current = 0;
+        const increment = target / 30; // Divide animation into 30 steps
+        const timer = setInterval(() => {
+            current += increment;
+            counter.textContent = Math.round(current);
+            if (current >= target) {
+                counter.textContent = target;
+                clearInterval(timer);
+            }
+        }, 50);
+    });
+
     // Handle smooth scrolling for all internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
