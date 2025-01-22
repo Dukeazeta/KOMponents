@@ -96,8 +96,47 @@ function createComponentCard(component) {
     return col;
 }
 
+// Theme handling
+const themeToggle = document.querySelector('.theme-toggle');
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+// Function to set theme
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+}
+
+// Initialize theme
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else if (prefersDarkScheme.matches) {
+        setTheme('dark');
+    } else {
+        setTheme('light');
+    }
+}
+
+// Toggle theme
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+}
+
+// Event listeners for theme
+themeToggle.addEventListener('click', toggleTheme);
+prefersDarkScheme.addEventListener('change', (e) => {
+    const newTheme = e.matches ? 'dark' : 'light';
+    setTheme(newTheme);
+});
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize theme
+    initTheme();
+    
     // Load components
     loadComponents();
     
