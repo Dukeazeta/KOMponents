@@ -28,16 +28,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
+                        <a href="index.html" class="nav-link active">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#components">Components</a>
+                        <a href="components.html" class="nav-link">Components</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#features">Features</a>
+                        <a href="docs.html" class="nav-link">Documentation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#docs">Documentation</a>
+                        <a href="about.html" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
                         <a href="https://github.com" target="_blank" class="nav-link">
@@ -67,11 +67,11 @@
                 <h1 class="display-1 fw-bold mb-4 fade-in-up">KOMponents</h1>
                 <p class="lead hero-subtitle mb-5 fade-in-up delay-1">Beautiful, reusable Flutter widgets to elevate your app's user experience</p>
                 <div class="hero-buttons fade-in-up delay-2">
-                    <a href="#components" class="btn btn-light btn-lg">
+                    <a href="components.html" class="btn btn-light btn-lg">
                         <i class="bi bi-grid-3x3-gap"></i>
                         <span>Browse Components</span>
                     </a>
-                    <a href="#docs" class="btn btn-outline-light btn-lg">
+                    <a href="docs.html" class="btn btn-outline-light btn-lg">
                         <i class="bi bi-book"></i>
                         <span>Documentation</span>
                     </a>
@@ -148,43 +148,73 @@
             <h2 class="text-center mb-2">Featured Components</h2>
             <p class="text-center text-muted mb-5">Discover our collection of beautiful Flutter widgets</p>
             <div class="row" id="components-grid">
-                <!-- Components will be dynamically loaded here -->
+                <div class="col-md-4">
+                    <div class="component-card">
+                        <div class="component-preview">
+                            <img src="assets/components/kbutton.png" alt="KButton Preview">
+                        </div>
+                        <div class="component-info p-4">
+                            <h3>KButton</h3>
+                            <p>Modern, customizable button with multiple styles</p>
+                            <a href="components.html#buttons" class="btn btn-primary">View More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="component-card">
+                        <div class="component-preview">
+                            <img src="assets/components/kcard.png" alt="KCard Preview">
+                        </div>
+                        <div class="component-info p-4">
+                            <h3>KCard</h3>
+                            <p>Flexible card component with various layouts</p>
+                            <a href="components.html#cards" class="btn btn-primary">View More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="component-card">
+                        <div class="component-preview">
+                            <img src="assets/components/kinput.png" alt="KInput Preview">
+                        </div>
+                        <div class="component-info p-4">
+                            <h3>KInput</h3>
+                            <p>Modern form inputs with built-in validation</p>
+                            <a href="components.html#inputs" class="btn btn-primary">View More</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Documentation Preview -->
-    <section id="docs" class="py-5">
+    <section id="docs" class="py-5 bg-light">
         <div class="container">
+            <h2 class="text-center mb-5">Quick Start Guide</h2>
             <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h2 class="mb-4">Well-Documented Components</h2>
-                    <p class="mb-4">Each component comes with detailed documentation, examples, and implementation guides to help you get started quickly.</p>
-                    <ul class="feature-list">
-                        <li><i class="bi bi-check2-circle me-2"></i>Clear implementation examples</li>
-                        <li><i class="bi bi-check2-circle me-2"></i>Detailed API documentation</li>
-                        <li><i class="bi bi-check2-circle me-2"></i>Best practices and tips</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary mt-4">
-                        <i class="bi bi-book me-2"></i>Read Documentation
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <div class="code-preview p-4 mt-4 mt-md-0">
-                        <pre><code class="language-dart">
-// Example usage of KOMponents
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="code-preview p-4">
+                        <pre><code>// Add to pubspec.yaml
+dependencies:
+  komponents: ^1.0.0
+
+// Import in your file
 import 'package:komponents/komponents.dart';
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return KButton(
-      text: 'Click Me',
-      style: KButtonStyle.elevated,
-      onPressed: () => print('Button pressed!'),
-    );
-  }
-}</code></pre>
+// Use in your widget
+KButton(
+  text: 'Click Me',
+  onPressed: () {},
+)</code></pre>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Easy to Get Started</h3>
+                    <p class="mb-4">KOMponents is designed to be simple to integrate into your Flutter projects. Follow our documentation to get started quickly.</p>
+                    <div class="d-flex flex-column gap-3">
+                        <a href="docs.html#installation" class="btn btn-primary">Installation Guide</a>
+                        <a href="docs.html#basic-usage" class="btn btn-outline-primary">Basic Usage</a>
                     </div>
                 </div>
             </div>
@@ -206,43 +236,35 @@ class MyApp extends StatelessWidget {
     <footer class="py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5 class="mb-3">KOMponents</h5>
-                    <p class="text-muted">Beautiful Flutter widgets for modern applications</p>
+                <div class="col-md-4 mb-4">
+                    <h5>KOMponents</h5>
+                    <p>Beautiful, reusable Flutter widgets</p>
                     <div class="social-links">
-                        <a href="#" class="me-3"><i class="bi bi-github"></i></a>
-                        <a href="#" class="me-3"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com" target="_blank"><i class="bi bi-github"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="https://discord.com" target="_blank"><i class="bi bi-discord"></i></a>
                     </div>
                 </div>
-                <div class="col-md-2 mb-4 mb-md-0">
-                    <h5 class="mb-3">Links</h5>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#components">Components</a></li>
-                        <li><a href="#docs">Documentation</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="components.html">Components</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="about.html">About</a></li>
                     </ul>
                 </div>
-                <div class="col-md-2 mb-4 mb-md-0">
-                    <h5 class="mb-3">Resources</h5>
+                <div class="col-md-4 mb-4">
+                    <h5>Resources</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Getting Started</a></li>
-                        <li><a href="#">Examples</a></li>
-                        <li><a href="#">API Reference</a></li>
+                        <li><a href="docs.html#installation">Installation</a></li>
+                        <li><a href="docs.html#basic-usage">Getting Started</a></li>
+                        <li><a href="components.html#examples">Examples</a></li>
                     </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="mb-3">Stay Updated</h5>
-                    <p class="text-muted">Subscribe to our newsletter for updates</p>
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Enter your email">
-                        <button class="btn btn-primary" type="button">Subscribe</button>
-                    </div>
                 </div>
             </div>
-            <hr class="my-4">
-            <div class="text-center">
-                <p class="mb-0">&copy; 2025 KOMponents. All rights reserved.</p>
+            <div class="text-center mt-4">
+                <p>&copy; 2025 KOMponents. All rights reserved.</p>
             </div>
         </div>
     </footer>

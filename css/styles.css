@@ -607,3 +607,145 @@ section {
 #home {
     scroll-margin-top: 0;
 }
+
+/* Documentation Styles */
+.docs-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 6rem 0 3rem;
+}
+
+.docs-search .input-group {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.docs-search .form-control {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.docs-search .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.docs-search .input-group-text {
+    background: none;
+    border: none;
+    color: white;
+}
+
+.docs-sidebar {
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.docs-sidebar h5 {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.docs-sidebar .nav-link {
+    color: var(--text-color);
+    opacity: 0.8;
+    padding: 0.5rem 0;
+}
+
+.docs-sidebar .nav-link:hover {
+    color: var(--primary-color);
+    opacity: 1;
+    background: none;
+}
+
+.docs-section {
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.docs-section + .docs-section {
+    margin-top: 2rem;
+}
+
+/* Components Page Styles */
+.components-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 6rem 0 3rem;
+}
+
+.component-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.component-filters .btn {
+    min-width: 120px;
+    border-width: 2px;
+}
+
+.component-filters .btn.active {
+    background: white;
+    color: var(--primary-color);
+    border-color: white;
+}
+
+/* About Page Styles */
+.about-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 6rem 0 3rem;
+}
+
+.about-image {
+    background: var(--card-bg);
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.team-card {
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: var(--transition);
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px var(--shadow-color);
+}
+
+.team-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Mobile Responsiveness for New Pages */
+@media (max-width: 768px) {
+    .docs-sidebar {
+        margin-bottom: 2rem;
+    }
+
+    .component-filters .btn {
+        min-width: 100px;
+        padding: 0.5rem 1rem;
+    }
+
+    .docs-search .form-control {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .team-card {
+        padding: 1.5rem;
+    }
+}

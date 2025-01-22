@@ -195,3 +195,110 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 });
+
+// Component filtering
+const filterButtons = document.querySelectorAll('.component-filters .btn');
+const componentsContainer = document.getElementById('components-container');
+
+// Sample components data
+const componentsFilter = [
+    {
+        name: 'KButton',
+        category: 'buttons',
+        description: 'A customizable button with various styles and states',
+        preview: `KButton(
+    text: 'Click Me',
+    onPressed: () => {},
+)`,
+    },
+    {
+        name: 'KCard',
+        category: 'cards',
+        description: 'A flexible card component with multiple variants',
+        preview: `KCard(
+    child: Column(
+        children: [
+            Text('Card Title'),
+            Text('Card content goes here'),
+        ],
+    ),
+)`,
+    },
+    {
+        name: 'KInput',
+        category: 'inputs',
+        description: 'A modern text input field with built-in validation',
+        preview: `KInput(
+    label: 'Username',
+    onChanged: (value) => {},
+)`,
+    },
+];
+
+// Filter components
+function filterComponents(category) {
+    const filteredComponents = category === 'all' 
+        ? componentsFilter 
+        : componentsFilter.filter(comp => comp.category === category);
+    
+    componentsContainer.innerHTML = '';
+    
+    filteredComponents.forEach(comp => {
+        const componentCard = createComponentCardFilter(comp);
+        componentsContainer.appendChild(componentCard);
+    });
+}
+
+// Create component card
+function createComponentCardFilter(component) {
+    const col = document.createElement('div');
+    col.className = 'col-lg-6 mb-4';
+    
+    col.innerHTML = `
+        <div class="component-card">
+            <div class="component-preview">
+                <pre><code>${component.preview}</code></pre>
+            </div>
+            <div class="component-info p-4">
+                <h3>${component.name}</h3>
+                <p>${component.description}</p>
+                <a href="docs.html#${component.name.toLowerCase()}" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    `;
+    
+    return col;
+}
+
+// Initialize components page if on components.html
+if (window.location.pathname.includes('components.html')) {
+    // Initial load of all components
+    filterComponents('all');
+    
+    // Add click handlers for filter buttons
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active state
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Filter components
+            const category = button.getAttribute('data-filter');
+            filterComponents(category);
+        });
+    });
+}
+
+// Documentation search functionality
+const searchInput = document.querySelector('.docs-search input');
+if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        const sections = document.querySelectorAll('.docs-section');
+        
+        sections.forEach(section => {
+            const text = section.textContent.toLowerCase();
+            section.style.display = text.includes(query) ? 'block' : 'none';
+        });
+    });
+}
